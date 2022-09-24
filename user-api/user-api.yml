@@ -1,0 +1,18 @@
+#Spring:
+#  data:
+#    mongodb:
+#      host: host.docker.internal
+#      port: 27017
+#      uri: mongodb://localhost:27017/test
+#      uri: mongodb://mongo:27017/RestDB
+
+
+
+server:
+  port: 8080
+
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        data: debug
