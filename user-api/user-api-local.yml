@@ -1,4 +1,2 @@
-Spring:
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/RestDB
+server:
+  port: 8082
