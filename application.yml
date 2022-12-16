@@ -1,10 +1,8 @@
+spring:
+  profiles:
+    include: dev
+
 server:
   firstname: abdelmalek
   lastname: benali
 #  mongodb
-Spring:
-  data:
-    mongodb:
-      host: ${MONGO_HOST}
-      port: 27017
-      database: test

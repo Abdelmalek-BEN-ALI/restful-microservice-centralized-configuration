@@ -1,12 +1,18 @@
 Spring:
   data:
     mongodb:
-      uri : mongodb://localhost:27017/RestDB
+      uri: ${mongodb.com.uri}
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          producer-properties:
+            key.serializer: org.apache.kafka.common.serialization.StringSerializer
+            value.serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+          #            interceptor.classes: com.events.eventproducer.interceptor.OrderEventProducerInterceptor
+          auto-create-topics: false
+      bindings:
+        mailSender-out-0:
+          destination: mail-event
 
-
-
-#logging:
-#  level:
-#    org:
-#      springframework:
-#        data: debug

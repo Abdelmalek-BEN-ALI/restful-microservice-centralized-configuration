@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          consumer-properties:
+            key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value.deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+          auto-create-topics: false
+        bindings:
+          mailConsumer-in-0:
+            consumer:
+              autoCommitOffset: false
+      bindings:
+        mailConsumer-in-0:
+          destination: mail-event
+
+    function:
+      definition: mailConsumer
+
+
